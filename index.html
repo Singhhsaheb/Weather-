@@ -13,9 +13,14 @@
 
         <h1>🌤 Weather App</h1>
 
+        <p class="app-tagline">Weather, local time, and a view from anywhere.</p>
+
         <div class="search-box">
-            <input type="text" id="cityInput" placeholder="Enter city name">
-            <button onclick="getWeather()">Search</button>
+            <div class="search-field">
+                <input type="text" id="cityInput" placeholder="Enter a city, country, or place" autocomplete="off" aria-autocomplete="list" aria-controls="suggestions">
+                <div class="suggestions" id="suggestions" role="listbox" hidden></div>
+            </div>
+            <button onclick="getWeather()"><span>Search</span><span aria-hidden="true">→</span></button>
         </div>
 
         <div class="loader" id="loader"></div>
@@ -35,6 +40,17 @@
                 <div>
                     <h3>🌬 Wind</h3>
                     <p id="wind"></p>
+                </div>
+            </div>
+
+            <div class="time-details" id="timeDetails" aria-live="polite">
+                <div>
+                    <h3 id="localTimeLabel">Local time</h3>
+                    <p id="localTime"></p>
+                </div>
+                <div id="indiaTimeBlock">
+                    <h3>India time</h3>
+                    <p id="indiaTime"></p>
                 </div>
             </div>
         </div>
